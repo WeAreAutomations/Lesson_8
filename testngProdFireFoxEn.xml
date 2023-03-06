@@ -19,7 +19,7 @@
         <classes>
             <class name="Main.Login"/>
             <class name="Tests.Test_1"/>
-<!--            <class name="Tests.Test_2"/>-->
+            <class name="Tests.Test_2"/>
 <!--            <class name="Tests.Test_3"/>-->
 
 

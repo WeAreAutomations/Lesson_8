@@ -1,13 +1,14 @@
 package Tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 import static Main.Login.driver;
 
@@ -30,7 +31,19 @@ public class Test_2 {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", logo);
 
-        WebElement Apple = driver.findElement(By.xpath("//a[@class=\"app-item\"][1]"));
+
+        try {
+            // Take the screenshot and save it to a file
+            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File destinationFile = new File
+                    ("D:\\Test\\Automation Courses\\Lesson_8\\real_life_screenshot_part.png");
+            Files.move(screenshotFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            if (!destinationFile.exists()) {
+                destinationFile.createNewFile();
+            }
+        } catch (IOException e) {
+            System.out.println("*** File exists ***");
+        }
 
         boolean isDisplayed = logo.isDisplayed();
         Assert.assertTrue(isDisplayed);
