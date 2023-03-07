@@ -22,7 +22,7 @@ public class Login {
     // Инициализируем Webdriver при помощи метода public Static, для автоматического использования в других классах
     public static WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(groups = "smoke")
     @Parameters({"preferredBrowser"})
     public void setUp(String preferredBrowser) {
 
@@ -39,7 +39,7 @@ public class Login {
     }
 
     @Parameters({"StartUrlLogin"})
-    @Test(testName = "Login test")
+    @Test(testName = "Login test", groups = {"smoke"})
     public  void case_1(String StartUrlLogin) throws IOException, InterruptedException, UnsupportedFlavorException {
         System.out.println("*** Login ***");
 

@@ -11,20 +11,24 @@
 <!--Browsers-->
             <parameter name="preferredBrowser" value="Firefox"/>
 <!--            <parameter name="preferredBrowser" value="Chrome"/>-->
-<!--            Start and Home page-->
-<!--            <parameter name="StartUrlLogin" value="https://google.com"/>-->
+
             <parameter name="StartUrlLogin" value="https://dex-trade.com"/>
+
+
 
 
         <classes>
             <class name="Main.Login"/>
             <class name="Tests.Test_1"/>
             <class name="Tests.Test_2"/>
+
 <!--            <class name="Tests.Test_3"/>-->
-
-
-
         </classes>
+            <groups>
+                <run>
+                    <include name="smoke"/>
+                </run>
+            </groups>
 <!--            <method-selectors>-->
 <!--                <method-selector>-->
 <!--                    <selector-class name="Order_Book.Sell"/>-->

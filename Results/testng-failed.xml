@@ -4,10 +4,15 @@
   <test thread-count="5" name="Dex-Trade Regression(failed)">
     <parameter name="preferredBrowser" value="Firefox"/>
     <parameter name="StartUrlLogin" value="https://dex-trade.com"/>
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
       <class name="Tests.Test_1">
         <methods>
-          <include name="test2" invocation-numbers="0"/>
+          <include name="test1" invocation-numbers="0"/>
         </methods>
       </class> <!-- Tests.Test_1 -->
     </classes>
