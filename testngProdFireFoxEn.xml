@@ -14,21 +14,21 @@
 
             <parameter name="StartUrlLogin" value="https://dex-trade.com"/>
 
-
+            <groups>
+                <run>
+                    <include name="smoke"/>
+                </run>
+            </groups>
 
 
         <classes>
             <class name="Main.Login"/>
             <class name="Tests.Test_1"/>
             <class name="Tests.Test_2"/>
-
 <!--            <class name="Tests.Test_3"/>-->
         </classes>
-            <groups>
-                <run>
-                    <include name="smoke"/>
-                </run>
-            </groups>
+
+
 <!--            <method-selectors>-->
 <!--                <method-selector>-->
 <!--                    <selector-class name="Order_Book.Sell"/>-->
