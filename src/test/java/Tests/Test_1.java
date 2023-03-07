@@ -40,7 +40,7 @@ public class Test_1 {
         Thread.sleep(4000);
         js.executeScript("window.scrollBy(0,-2500)");
 
-        long scrollPosition2 = (Long) js.executeScript("return window.pageYOffset;");
+        long scrollPosition2 = (Long) js.executeScript("return window.scrollY");
         System.out.println("Current scroll position: " + scrollPosition2);
 
         int scroll = 2500;
